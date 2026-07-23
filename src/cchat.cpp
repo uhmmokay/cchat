@@ -117,13 +117,16 @@ void createRoom(std::uint16_t port, std::string pass)
         std::system("sudo -v");
         std::string x = "clear && echo Your ip is $(curl ifconfig.me), your port is " + std::to_string(port) + " [SYSTEM], pass: " + pass;
         std::system(x.c_str());
+        std::cout << "Press enter to start chat:\n";
+        ignore();
         std::string createRoomCommand = "sudo cryptcat -l -p " + std::to_string(port) + " -k " + escapeForShell(pass);
         std::system(createRoomCommand.c_str());
     } else {
         std::string x = "clear && echo Your ip is $(curl ifconfig.me), your port is " + std::to_string(port) + ", pass: " + pass;
         std::system(x.c_str());
+        std::cout << "Press enter to start chat:\n";
+        ignore();
         std::string createRoomCommand = "cryptcat -l -p " + std::to_string(port) + " -k " + escapeForShell(pass);
-        std::system(createRoomCommand.c_str());
         std::system(createRoomCommand.c_str());
     }
 }
