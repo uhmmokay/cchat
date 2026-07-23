@@ -1,4 +1,4 @@
-<h1> Cchat - Cryptcat Assistant</h1>
+<h1> Cchat v2 - Cryptcat Assistant for GNU/Linux Distributions</h1>
 
 ### Rejoice - you no longer have to struggle with flags to get cryptcat working properly in your terminal!
 ### Here is an open-source assistant written in C++ for high performance. 

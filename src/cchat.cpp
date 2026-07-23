@@ -8,6 +8,19 @@ void ignore()
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
+std::string escapeForShell(const std::string& str) {
+    std::string escaped = "'";
+    for (char c : str) {
+        if (c == '\'') {
+            escaped += "'\\''";
+        } else {
+            escaped += c;
+        }
+    }
+    escaped += "'";
+    return escaped;
+}
+
 std::uint16_t getValue(std::string msg, std::string errorMsg)
 {
     std::cout << msg;
@@ -84,7 +97,11 @@ std::string getip()
 std::uint16_t getPort()
 {
     std::uint16_t port {getValue("Enter the port you want to use: ", "Invalid value. Exiting...\n")};
-    std::cout << "\nCreating room...";
+    std::cout << "\n...\n";
+    if (port < 1023)
+    {
+        std::cout << "Warning! You are using system port.\nThis action requires sudo.\n";
+    }
     return port;
 }
 
@@ -96,12 +113,24 @@ std::string getPass()
 
 void createRoom(std::uint16_t port, std::string pass)
 {
-    std::string createRoomCommand = "cryptcat -l -p " + std::to_string(port) + " -k " + pass;
-    std::system(createRoomCommand.c_str());
+    if (port < 1023)
+    {
+        std::system("sudo -v");
+        std::string x = "clear && echo Your ip is $(curl ifconfig.me), your port is " + std::to_string(port) + " [SYSTEM], pass: " + pass;
+        std::system(x.c_str());
+        std::string createRoomCommand = "sudo cryptcat -l -p " + std::to_string(port) + " -k " + escapeForShell(pass);
+        std::system(createRoomCommand.c_str());
+    } else {
+        std::string x = "clear && echo Your ip is $(curl ifconfig.me), your port is " + std::to_string(port) + ", pass: " + pass;
+        std::system(x.c_str());
+        std::string createRoomCommand = "cryptcat -l -p " + std::to_string(port) + " -k " + escapeForShell(pass);
+        std::system(createRoomCommand.c_str());
+        std::system(createRoomCommand.c_str());
+    }
 }
 
 void connectTo(std::string ip, std::uint16_t port, std::string pass)
 {
-    std::string connectTOCommand = "cryptcat -k " + pass + " " + ip + " " + std::to_string(port);
+    std::string connectTOCommand = "cryptcat -k " + escapeForShell(pass) + " " + escapeForShell(ip) + " " + std::to_string(port);
     std::system(connectTOCommand.c_str());
 }
