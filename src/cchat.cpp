@@ -49,7 +49,6 @@ std::string getString(std::string msg, std::string errorMsg)
     if (std::cin.fail())
     {
         std::cin.clear();
-        ignore();
         std::cerr << errorMsg;
         exit(1);
     }
