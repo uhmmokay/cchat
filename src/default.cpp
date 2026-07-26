@@ -19,6 +19,7 @@ std::uint16_t getPort()
     if (port < 1023)
     {
         std::cout << "Warning! You are using system port.\nThis action requires sudo.\n";
+        std::system ("sudo -v");
     }
     return port;
 }
