@@ -1,13 +1,13 @@
 <h1> Cchat v2 - Cryptcat Assistant for GNU/Linux Distributions</h1>
 
-### Rejoice - you no longer have to struggle with flags to get cryptcat working properly in your terminal!
-### Here is an open-source assistant written in C++ for high performance. 
+#### Rejoice - you no longer have to struggle with flags to get cryptcat working properly in your terminal!
+#### Here is an open-source assistant written in C++ for high performance. 
 
 <h1>Installation</h1>
 
 ```
 git clone https://github.com/uhmmokay/cchat.git && cd ./cchat
-g++ ./main.cpp ./cchat.cpp -o cchat
+g++ ./src/*.cpp -o cchat
 
 ```
 
@@ -17,9 +17,9 @@ g++ ./main.cpp ./cchat.cpp -o cchat
 
 <h1> So, what exactly is this program? </h1>
 
-### It solves the problem of users having to enter flags to use cryptcat.
+#### It solves the problem of users having to enter flags to use cryptcat.
 
-### Currently, the program implements only two functions: 
+#### Currently, the program implements only two functions: 
 
 <ol>
     <li><h3>Connection to the server for communication</h3></li>
@@ -28,24 +28,27 @@ g++ ./main.cpp ./cchat.cpp -o cchat
 
 <h1> What is your creation doing? </h1>
 
-### At the beginning, the program will output:
+#### At the beginning, the program will output:
 
 ```
 
-Hello! This is a 'cchat'. 
-You can get more documentation on 'https://github.com/uhmmokay/cchat'.
-This program uses 'cryptcat'
-Please choose what you want to do: 
-1) Create local server for chatting.
-2) Connect to another server for chatting.
+    Please choose what you want to do:
+    1) Create local server for chatting.
+    2) Connect to another server for chatting.
+    3) Send file to server
+    4) Create server for file
 
 ```
 
-### If you select 1, the program will ask you to choose a port and a password for your room.
+#### If you select 1, the program will ask you to choose a port and a password for your room. For chatting (you are host)
 
-### If you select 2, the programm will ask you to write an ip, password and port of your target server.
+#### If you select 2, the program will ask you to write an ip, password and port of your target server. For chatting (you are client)
 
-### If you want to share your server with someone else after creating it, simply provide the IP address and the port you specified during setup.
+#### If you want to share your server with someone else after creating it, simply provide the IP address and the port you specified during setup.
+
+#### If you select 3, the program will ask you to write an ip, password, path/to/file and port. Then, program will send file to your target (ip)
+
+### If you select 4, the program will ask you to write a password, path/to/file and port. Then, program will await that someone will send you a file (provide ip, pass and port to get file)
 
 # License?
 
