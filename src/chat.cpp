@@ -13,7 +13,7 @@ void createRoom(std::uint16_t port)
         std::cout << "Press enter to start chat:\n";
         ignore();
         std::system("clear");
-        std::string createRoomCommand = "sudo ncat -l " + std::to_string(port) + " -k ";
+        std::string createRoomCommand = "sudo ncat -l " + std::to_string(port) + " ";
         std::system(createRoomCommand.c_str());
     } else {
         std::string x = "clear && echo Your ip is $(curl ifconfig.me), your port is " + std::to_string(port);

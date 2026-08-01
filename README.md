@@ -17,7 +17,7 @@ g++ ./src/*.cpp -o cchat
 
 <h1> So, what exactly is this program? </h1>
 
-#### It solves the problem of users having to enter flags to use ncatcat.
+#### It solves the problem of users having to enter flags to use ncat.
 
 #### Currently, the program implements only two functions: 
 
