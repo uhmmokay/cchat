@@ -1,7 +1,7 @@
-<h1> Cchat v2 - Cryptcat Assistant for GNU/Linux Distributions</h1>
+<h1> Cchat v3 - Ncat TUI for GNU/Linux Distributions</h1>
 
-#### Rejoice - you no longer have to struggle with flags to get cryptcat working properly in your terminal!
-#### Here is an open-source assistant written in C++ for high performance. 
+#### Rejoice - you no longer have to struggle with flags to get ncat working properly in your terminal!
+#### Here is an open-source TUI app written in C++ for high performance. 
 
 <h1>Installation</h1>
 
@@ -17,7 +17,7 @@ g++ ./src/*.cpp -o cchat
 
 <h1> So, what exactly is this program? </h1>
 
-#### It solves the problem of users having to enter flags to use cryptcat.
+#### It solves the problem of users having to enter flags to use ncatcat.
 
 #### Currently, the program implements only two functions: 
 

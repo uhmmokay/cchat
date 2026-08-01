@@ -26,14 +26,8 @@ std::uint16_t getPort()
 
 std::string getPwd()
 {
-    std::string pwd {getString("Enter path (example: /home/user/target/directory): ", "Invalid path. Exiting...\n")};
+    std::string pwd {getString("Enter path (example: /home/user/target/directory/file.txt): ", "Invalid path. Exiting...\n")};
     return pwd;
-}
-
-std::string getPass()
-{
-    std::string pass {getString("Enter Secret Key: ", "Invalid value. Exiting...")};
-    return pass;
 }
 
 std::string escapeForShell(const std::string& str) {
@@ -87,7 +81,7 @@ std::string getString(std::string msg, std::string errorMsg)
 void introduction()
 {
     std::system("clear");
-    std::cout << "Hello! This is a 'cchat'. \n\033[32mYou can get more documentation on 'https://github.com/uhmmokay/cchat'.\033[0m\nThis program uses 'cryptcat'\n";
+    std::cout << "Hello! This is a 'cchat'. \n\033[32mYou can get more documentation on 'https://github.com/uhmmokay/cchat'.\033[0m\nThis program uses 'ncat'\n";
 }
 
 std::uint16_t whatDoYouWant()
