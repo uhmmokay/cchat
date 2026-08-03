@@ -22,8 +22,10 @@ g++ ./src/*.cpp -o cchat
 #### Currently, the program implements only two functions: 
 
 <ol>
-    <li><h3>Connection to the server for communication</h3></li>
-    <li><h3>Creating the server for communication</h3></li>
+    <li><h4>Connection to the server for communication</h4></li>
+    <li><h4>Creating the server for communication</h4></li>
+    <li><h4>Sending file to server</h4></li>
+    <li><h4>Creating server for getting files from client</h4></li>
 </ol>
 
 <h1> What is your creation doing? </h1>
@@ -48,7 +50,7 @@ g++ ./src/*.cpp -o cchat
 
 #### If you select 3, the program will ask you to write an ip, password, path/to/file and port. Then, program will send file to your target (ip)
 
-### If you select 4, the program will ask you to write a password, path/to/file and port. Then, program will await that someone will send you a file (provide ip, pass and port to get file)
+#### If you select 4, the program will ask you to write a password, path/to/file and port. Then, program will await that someone will send you a file (provide ip, pass and port to get file)
 
 # License?
 
